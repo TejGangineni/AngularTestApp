@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Dashboard</mat-toolbar>
+    <mat-nav-list>
+      <a id="open-close" mat-list-item routerLink="home" routerLinkActive="active">Home</a>
+      <!-- <a mat-list-item routerLink="table">Table</a>
+      <a mat-list-item routerLink="form">Angular Form</a>
+      <a mat-list-item routerLink="charts">Charts</a>
+      <a mat-list-item routerLink="http">Http Request</a> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    <span *ngIf="isUserLoggedIn()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a [routerLink]="['/login']">Logout</a></span>
+    <span>{{stringDate}}</span>
+    <div class="hide">D</div>
+    <div class="hide">D</div>
+    <span>{{title}}</span>
+    </mat-toolbar>
+    <app-message></app-message>
+    <div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

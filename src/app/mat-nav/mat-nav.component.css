@@ -1,0 +1,40 @@
+.sidenav-container {
+	height: 100%;
+  }
+  
+  .sidenav {
+	width: 200px;
+  }
+  
+  .mat-toolbar.mat-primary {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+  }
+  
+  .sidenav {
+	  width: 200px;
+	  background-color: #43cea2;
+	  background-image: linear-gradient(135deg, #43cea2 0%, #185a9d 74%);
+  }
+  
+  .sidenav .mat-toolbar {
+	background-color: #43cea2;
+	background-image: linear-gradient(135deg, #43cea2 0%, #185a9d 74%);
+	flex-direction: row;
+}
+
+.mat-toolbar {
+	background-color: #43cea2;
+	background-image: linear-gradient(135deg, #43cea2 0%, #185a9d 74%);
+	flex-direction: row-reverse;
+}
+
+.hide {
+	visibility: collapse;
+	width: 800px;
+  }
+
+a {
+	color: aliceblue;
+}
